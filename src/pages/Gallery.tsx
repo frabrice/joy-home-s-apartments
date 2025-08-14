@@ -23,6 +23,26 @@ const Gallery = () => {
       category: "Interior"
     },
     {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%205.jpg?raw=true",
+      alt: "Modern Living Area",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2011.jpg?raw=true",
+      alt: "Modern Living Area",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%203.jpg?raw=true",
+      alt: "Modern Living Area",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%207.jpg?raw=true",
+      alt: "Modern Living Area",
+      category: "Interior"
+    },
+    {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%203.jpg?raw=true",
       alt: "Contemporary Interior",
       category: "Interior"
