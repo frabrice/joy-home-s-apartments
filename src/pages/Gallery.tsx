@@ -8,102 +8,237 @@ const Gallery = () => {
 
   const interiorImages = [
     {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%202.jpg?raw=true",
+      alt: "Modern Interior Design",
+      category: "Interior"
+    },
+    {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%204.jpg?raw=true",
       alt: "Elegant Interior Space",
       category: "Interior"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2013.jpg?raw=true",
-      alt: "Luxury Interior Design",
-      category: "Interior"
-    },
-    {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2011.jpg?raw=true",
-      alt: "Modern Living Area",
-      category: "Interior"
-    },
-    {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%205.jpg?raw=true",
+      alt: "Contemporary Interior Layout",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%206.jpg?raw=true",
+      alt: "Stylish Interior Features",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%202.jpg?raw=true",
+      alt: "Luxury Living Space",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2010.jpg?raw=true",
+      alt: "Premium Interior Design",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2013.jpg?raw=true",
       alt: "Modern Living Area",
       category: "Interior"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2011.jpg?raw=true",
-      alt: "Modern Living Area",
-      category: "Interior"
-    },
-    {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%203.jpg?raw=true",
-      alt: "Modern Living Area",
-      category: "Interior"
-    },
-    {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%207.jpg?raw=true",
-      alt: "Modern Living Area",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2028.jpg?raw=true",
+      alt: "Elegant Interior Space",
       category: "Interior"
     },
     {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%203.jpg?raw=true",
       alt: "Contemporary Interior",
       category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%205.jpg?raw=true",
+      alt: "Sophisticated Interior Design",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%206.jpg?raw=true",
+      alt: "Premium Living Space",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%207.jpg?raw=true",
+      alt: "Modern Interior Layout",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2012.jpg?raw=true",
+      alt: "Luxury Interior Features",
+      category: "Interior"
     }
   ];
 
   const kitchenImages = [
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%208.jpg?raw=true",
-      alt: "Modern Kitchen Design",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%204.jpg?raw=true",
+      alt: "Modern Kitchen Layout",
       category: "Kitchen"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%203.jpg?raw=true",
-      alt: "Elegant Kitchen Layout",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%206.jpg?raw=true",
+      alt: "Contemporary Kitchen Design",
       category: "Kitchen"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%208.jpg?raw=true",
-      alt: "Contemporary Kitchen Space",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%207.jpg?raw=true",
+      alt: "Elegant Kitchen Space",
+      category: "Kitchen"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%208.jpg?raw=true",
+      alt: "Modern Kitchen Appliances",
       category: "Kitchen"
     },
     {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%209.jpg?raw=true",
-      alt: "Stylish Kitchen Design",
+      alt: "Kitchen Counter Design",
+      category: "Kitchen"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%208.jpg?raw=true",
+      alt: "Stylish Kitchen Layout",
+      category: "Kitchen"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%2022.jpg?raw=true",
+      alt: "Premium Kitchen Features",
+      category: "Kitchen"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2010.jpg?raw=true",
+      alt: "Kitchen Dining Area",
+      category: "Kitchen"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2011.jpg?raw=true",
+      alt: "Complete Kitchen Setup",
+      category: "Kitchen"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%203.jpg?raw=true",
+      alt: "Luxury Kitchen Design",
       category: "Kitchen"
     }
   ];
 
   const roomsImages = [
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2018.jpg?raw=true",
-      alt: "Spacious Bedroom",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%2014.jpg?raw=true",
+      alt: "Modern Bedroom Design",
       category: "Rooms"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2019.jpg?raw=true",
-      alt: "Comfortable Living Space",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2015.jpg?raw=true",
+      alt: "Elegant Bedroom Space",
       category: "Rooms"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%2015.jpg?raw=true",
-      alt: "Elegant Bedroom",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2016.jpg?raw=true",
+      alt: "Comfortable Bedroom Layout",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2017.jpg?raw=true",
+      alt: "Spacious Bedroom Interior",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2020.jpg?raw=true",
+      alt: "Premium Bedroom Features",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2016.jpg?raw=true",
+      alt: "Contemporary Bedroom Design",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2017.jpg?raw=true",
+      alt: "Luxury Bedroom Space",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2020.jpg?raw=true",
+      alt: "Stylish Bedroom Layout",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2022.jpg?raw=true",
+      alt: "Cozy Bedroom Interior",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2023.jpg?raw=true",
+      alt: "Beautiful Bedroom Design",
       category: "Rooms"
     },
     {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%205.jpg?raw=true",
-      alt: "Cozy Room Layout",
+      alt: "Master Bedroom Suite",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%208.jpg?raw=true",
+      alt: "Elegant Bedroom Features",
+      category: "Rooms"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%207.jpg?raw=true",
+      alt: "Comfortable Bedroom Space",
       category: "Rooms"
     }
   ];
 
   const bathroomImages = [
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2012.jpg?raw=true",
-      alt: "Luxury Bathroom Design",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%2017.jpg?raw=true",
+      alt: "Modern Bathroom Design",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%2018.jpg?raw=true",
+      alt: "Elegant Bathroom Space",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20three%2019.jpg?raw=true",
+      alt: "Contemporary Bathroom Layout",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2021.jpg?raw=true",
+      alt: "Stylish Bathroom Features",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20one%2024.jpg?raw=true",
+      alt: "Luxury Bathroom Interior",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2028.jpg?raw=true",
+      alt: "Premium Bathroom Design",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2029.jpg?raw=true",
+      alt: "Modern Bathroom Fixtures",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2032.jpg?raw=true",
+      alt: "Sophisticated Bathroom Space",
       category: "Bathroom"
     },
     {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2031.jpg?raw=true",
-      alt: "Modern Bathroom Space",
+      alt: "Complete Bathroom Setup",
       category: "Bathroom"
     }
   ];
@@ -115,7 +250,7 @@ const Gallery = () => {
       category: "Exterior"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%202.jpg?raw=true",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%203.jpg?raw=true",
       alt: "Property Exterior Design",
       category: "Exterior"
     },
@@ -125,8 +260,28 @@ const Gallery = () => {
       category: "Exterior"
     },
     {
-      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%208.jpg?raw=true",
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%206.jpg?raw=true",
       alt: "Property Facade",
+      category: "Exterior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%208.jpg?raw=true",
+      alt: "Exterior Architecture",
+      category: "Exterior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%2012.jpg?raw=true",
+      alt: "Building Design",
+      category: "Exterior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%2015.jpg?raw=true",
+      alt: "Property Exterior Features",
+      category: "Exterior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20four%2018.jpg?raw=true",
+      alt: "Complete Building View",
       category: "Exterior"
     }
   ];
