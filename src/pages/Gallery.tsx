@@ -5,6 +5,7 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
+  const [isLoadingCategory, setIsLoadingCategory] = useState(false);
 
   const interiorImages = [
     {
@@ -293,12 +294,29 @@ const Gallery = () => {
 
   const filteredImages = images.filter(img => img.category === selectedCategory);
 
+  const handleCategoryChange = (category: string) => {
+    if (category !== selectedCategory) {
+      setIsLoadingCategory(true);
+      setSelectedCategory(category);
+      setLoadedImages(new Set());
+      setImageErrors(new Set());
+      
+      // Reset loading state after a brief moment to allow new images to start loading
+      setTimeout(() => {
+        setIsLoadingCategory(false);
+      }, 100);
+    }
+  };
+
   const handleImageLoad = (index: number) => {
     setLoadedImages(prev => new Set(prev).add(index));
   };
 
   const handleImageError = (index: number) => {
-    setImageErrors(prev => new Set(prev).add(index));
+    // Only set error after a reasonable timeout to avoid premature error states
+    setTimeout(() => {
+      setImageErrors(prev => new Set(prev).add(index));
+    }, 3000);
   };
 
   const nextImage = () => {
@@ -334,7 +352,7 @@ const Gallery = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                   selectedCategory === category
                     ? 'bg-amber-600 text-white'
@@ -351,48 +369,63 @@ const Gallery = () => {
       {/* Gallery Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {filteredImages.map((image, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden rounded-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
-                onClick={() => setSelectedImage(index)}
-              >
-                <div className="relative w-full h-48 sm:h-64 bg-gray-200">
-                  {!loadedImages.has(index) && !imageErrors.has(index) && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600"></div>
+          {isLoadingCategory ? (
+            <div className="flex items-center justify-center py-20">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto mb-4"></div>
+                <p className="text-slate-600">Loading {selectedCategory} images...</p>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+              {filteredImages.map((image, index) => (
+                <div 
+                  key={`${selectedCategory}-${index}`}
+                  className="group relative overflow-hidden rounded-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <div className="relative w-full h-48 sm:h-64 bg-gray-200">
+                    {!loadedImages.has(index) && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600 mx-auto mb-2"></div>
+                          <p className="text-gray-500 text-xs">Loading...</p>
+                        </div>
+                      </div>
+                    )}
+                    {imageErrors.has(index) && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                        <div className="text-center">
+                          <p className="text-gray-500 text-sm">Image unavailable</p>
+                          <p className="text-gray-400 text-xs mt-1">Failed to load</p>
+                        </div>
+                      </div>
+                    )}
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad(index)}
+                      onError={() => handleImageError(index)}
+                      className={`w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300 ${
+                        loadedImages.has(index) && !imageErrors.has(index) ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">
+                      <p className="text-sm sm:text-lg font-semibold">{image.alt}</p>
                     </div>
-                  )}
-                  {imageErrors.has(index) && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                      <p className="text-gray-500 text-sm">Image unavailable</p>
-                    </div>
-                  )}
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    loading="lazy"
-                    onLoad={() => handleImageLoad(index)}
-                    onError={() => handleImageError(index)}
-                    className={`w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300 ${
-                      loadedImages.has(index) ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4 text-center">
-                    <p className="text-sm sm:text-lg font-semibold">{image.alt}</p>
+                  </div>
+                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+                    <span className="bg-amber-600 text-white px-2 py-1 rounded text-xs font-medium">
+                      {image.category}
+                    </span>
                   </div>
                 </div>
-                <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                  <span className="bg-amber-600 text-white px-2 py-1 rounded text-xs font-medium">
-                    {image.category}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
