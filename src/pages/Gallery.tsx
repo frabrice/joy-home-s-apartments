@@ -72,6 +72,21 @@ const Gallery = () => {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2012.jpg?raw=true",
       alt: "Luxury Interior Features",
       category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%209.jpg?raw=true",
+      alt: "Premium Interior Design",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2011.jpg?raw=true",
+      alt: "Elegant Interior Space",
+      category: "Interior"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2013.jpg?raw=true",
+      alt: "Modern Interior Layout",
+      category: "Interior"
     }
   ];
 
@@ -240,6 +255,16 @@ const Gallery = () => {
     {
       src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20two%2031.jpg?raw=true",
       alt: "Complete Bathroom Setup",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2012.jpg?raw=true",
+      alt: "Luxury Bathroom Features",
+      category: "Bathroom"
+    },
+    {
+      src: "https://github.com/frabrice/joy-home-s-images/blob/main/Image%20five%2014.jpg?raw=true",
+      alt: "Modern Bathroom Design",
       category: "Bathroom"
     }
   ];
